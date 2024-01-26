@@ -6,54 +6,34 @@
 
 // *let's create a function that will print out a message to the console.
 
-function printMessage() {
-  console.log("Hello World!");
-}
+// pass a parameter to the function
 
-// output: Hello World!
-
-const name = "Joe";
-// pass a custom parameter to the function
+// Default parameters
 
 // What is scope in Javascript?
 // Scope refers to a piece of data that could be accessed globally or locally
 
-// ? Global scope => name is a global variable
-// ? Local scope => local -> its a parameter for the function greeting, we do not have access to that parameter outside the scope of the function
+const book = {
+  title: "Harry Potter",
+  author: "JK Rowling",
+  pages: 500,
+  description:
+    "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.",
+  year_published: 1997,
+  number_of_books: 7,
+};
 
-// function greeting(name = "Tom") {
-//   console.log("Good morning " + name);
-// }
-
-// console.log(name);
-
-// greeting();
-// create a function that takes two numbers parameters and returns the sum of those parameters
-
-// create a function that takes two numbers and a string for the operator and then returns the result of the operator on the two numbers.
-
-// calculate(10, 20, '+') => 30
-// calculate(10, 20, '*') => 200
-
-// function calculate(num1, num2, operator) {
-//   if (operator === "+") {
-//     return num1 + num2;
-//   } else if (operator === "-") {
-//     return Math.abs(num1 - num2);
-//   } else if (operator === "*") {
-//     return num1 * num2;
-//   } else if (operator === "/") {
-//     return num1 / num2;
-//   }
-//   console.log("This is illegal operation");
-//   return false;
-// }
+// ! student exercise: create a function that takes a book object as an argument and prints out "The book <book title> was written by <author> in <year published>. It has <number of books> books in the series. <description>. The book has <pages> pages."
 
 /* 
 ! student exercise:
-? create a function `rectangleAreaCalculator` that takes the length and width of a rectangle and returns the area of the rectangle. (formula: length * width)
-? create a function  that takes the length and width of a rectangle and returns the perimeter of the rectangle. (formula: 2 * (length + width)
-? create a function that takes the radius of a circle and returns the area of the circle. (hint: use Math.PI)
+? create a function that takes a string and returns the number of characters in that string
+
+? create a function that takes 2 string and returns the longer string 
+
+? create a function that takes 2 string and joins them together with a space in between and returns the new string
+
+? create a function that takes an array of numbers and returns the largest number in the array
 */
 
 // ! function scope
@@ -65,32 +45,9 @@ const name = "Joe";
 
 // example:
 
-function average(num1, num2) {
-  return (num1 + num2) / 2;
-}
-
-// console.log(avg(10, 20));
-
-let avg = average;
-
-console.log(avg(5, 10));
-
 // * functions can be passed as arguments to other functions - callback functions
 
 // example:
-
-function product(num1, num2) {
-  return num1 * num2;
-}
-
-function sum(num1, num2) {
-  return num1 + num2;
-}
-
-function calculate(num1, num2, callback) {
-  // console.log(typeof callback);
-  return callback(num1, num2);
-}
 
 // * functions can be returned from other functions
 
@@ -108,39 +65,26 @@ function calculate(num1, num2, callback) {
 // * arrow functions are a shorter syntax for writing function expressions
 // example:
 
-// function printSomething(message) {
-//   console.log(message);
-// }
-
-// let printSomething = (message) => {
-//   console.log(message);
-//   return message;
-// };
-
-printSomething("Print this");
 // * rules:
 
 // * if the function has a single parameter, the parentheses are optional
 // example:
 
-// let printSomething = message => {
-//   console.log(message);
-//   return message;
-// };
-
 // * if the function has a single expression, the curly braces are optional
 // example:
-// let printSomething = (message) => console.log(message);
 
 // * if the function has a single expression, the return keyword is optional
 // example:
 
-// let printSomething = (message) => message + "Other text"
+// Callback functions example: array.map(), array.filter(), array.forEach()
 
-// forEach, filter, map
+// ! write your own map, filter, forEach functions
 
-// myMap([], callback)
+// myMap function -> takes an array and a callback function as arguments and returns a new array with the result of the callback function on each element of the array
+// example: myMap([1, 2, 3], (num) => num * 2) -> [2, 4, 6]
 
-// filter([], callback)
+// myFilter function -> takes an array and a callback function as arguments and returns a new array with the elements that return true when passed into the callback function
+// example: myFilter([1, 2, 3], (num) => num > 2) -> [3]
 
-
+// myForEach function -> takes an array and a callback function as arguments and returns undefined. It executes the callback function on each element of the array
+// example: myForEach([1, 2, 3], (num) => console.log(num)) -> 1, 2, 3
