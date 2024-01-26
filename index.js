@@ -7,13 +7,16 @@
 // Let's get started!
 
 // Variables and Data Types
+// ? What is a variable and data types?
+// ! A variable is a container for storing data values. You can think of variables as little containers for information that live in a computer's memory. Information stored in variables can be updated or changed.
+
+// ? How many data types are there in JavaScript?
 
 // 1. Declare a variable 'age' and assign your age to it.
 // 2. Declare a constant 'name' and assign your name to it.
 // 3. Declare a variable 'isStudent' and assign a boolean value to it.
 // 4. Declare a variable 'score' and assign a numeric value to it.
 // 5. Declare an array 'fruits' and add a few different fruit names to it.
-// 6. Declare an object 'person' with properties 'name' and 'age'.
 
 // Console Output
 
@@ -51,6 +54,8 @@
 
 // Arrays
 
+// ? What is an array?
+
 // 15. Declare an array 'colors' with a few color names.
 
 // Loop through the 'colors' array and print each color to the console.
@@ -69,3 +74,21 @@
 // check if a color exists in the 'colors' array.
 // remove the last color from the 'colors' array.
 // remove the first color from the 'colors' array.
+
+// Objects
+
+// ? What is an object?
+
+// 18. Declare an object 'book' with properties 'title', 'author', 'year', 'description', and 'rating'.
+
+// 19. Access the 'title' property of the 'book' object.
+// 20. Update the 'title' property of the 'book' object.
+
+// 21. Add a new property 'genre' to the 'book' object.
+// 22. Remove the 'rating' property from the 'book' object.
+
+// 23. Loop through the 'book' object and print each property to the console.
+
+// Console Output the following: {book title} by {book author} was published in {book year}. {book description}. It has a rating of {book rating}. The genre is {book genre}.
+
+
