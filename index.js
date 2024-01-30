@@ -75,6 +75,44 @@ function printBookDetail(book) {
 ? create a function that takes an array of numbers and returns the largest number in the array
 */
 
+// countChar("This is the string") -> 18
+
+function countChar(str) {
+  return str.length;
+}
+// findLongerString("skbjdfkdjs", "dakhjbfkdjaf") => "dakhjbfkdjaf"
+
+function findLongerString(str1, str2) {
+  if (str1.length > str2.length) {
+    return str1;
+  } else if (str2.length > str1.length) {
+    return str2;
+  } else {
+    return false;
+  }
+}
+
+// joinString("Hello", "World") => "Hello World"
+function joinString(str1, str2) {
+  return str1 + " " + str2;
+}
+
+// findMax([12, 4, 6, 1, 90, 32]) => 90
+
+function findMax(arr) {
+  let largeNum = 0;
+
+  for (let num of arr) {
+    // debugger;
+    if (num > largeNum) {
+      largeNum = num;
+      //   debugger;
+    }
+  }
+
+  return largeNum;
+}
+
 // ! function scope
 // * variables declared inside a function are only accessible inside that function - Local Scope
 // * variables declared outside of a function are accessible anywhere in the file - Global Scope
@@ -84,9 +122,29 @@ function printBookDetail(book) {
 
 // example:
 
+function greet(name) {
+  console.log("Hello world " + name);
+}
+
+function morningGreeting(name) {
+  console.log("Good morning " + name);
+}
+
+function afternoonGreeting(name) {
+  console.log("Good Afternoon " + name);
+}
+
+let greeting = greet;
+
 // * functions can be passed as arguments to other functions - callback functions
 
 // example:
+
+function myFunc(name, callback) {
+  let date = new Date();
+  console.log(date);
+  callback(name);
+}
 
 // * functions can be returned from other functions
 
@@ -100,14 +158,53 @@ function printBookDetail(book) {
 // ! student exercise: callback functions
 // ? create a function `calculate` that takes two numbers and a function as argument and then executes the function on the two numbers passed in.
 
+function sum(num1, num2) {
+  return num1 + num2;
+}
+
+function product(num1, num2) {
+  return num1 * num2;
+}
+
+function difference(num1, num2) {
+  return num1 - num2;
+}
+
+function calculate(num1, num2, callback) {
+  return callback(num1, num2);
+}
+
+// calculate(100, 20, product); // => 2000
+calculate(150, 23, difference); // => 127
+
 // ! arrow functions
 // * arrow functions are a shorter syntax for writing function expressions
 // example:
+
+// 1. an arrow function could be declared as a variable
+
+// 2. does not have the function keyword, but it takes the ()
+
+// 3. it has an arrow
+
+// let drink = () => {
+//   console.log("It's 5 o'clock");
+//   console.log("Have a drink");
+// };
+
+// function drink(name) {
+// return "Have a " + name;
+
+// }
 
 // * rules:
 
 // * if the function has a single parameter, the parentheses are optional
 // example:
+
+let drink = (name) => {
+  return "Have a " + name;
+};
 
 // * if the function has a single expression, the curly braces are optional
 // example:
