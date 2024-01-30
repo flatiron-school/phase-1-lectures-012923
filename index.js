@@ -4,6 +4,20 @@
 
 // !A function is initialized with the function keyword, followed by a name, followed by parentheses()
 
+function juicer(fruit = "Apple") {
+  //   console.log("Juicer starting");
+  //   console.log("Your " + fruit + " juice is getting ready");
+  //   console.log("Complete!");
+  return fruit + " juice";
+}
+
+// juicer();
+juicer("Pineapple");
+// juicer();
+// juicer();
+
+// a way to pass values, arguments, inputs, make it more dynamic
+
 // *let's create a function that will print out a message to the console.
 
 // pass a parameter to the function
@@ -13,17 +27,42 @@
 // What is scope in Javascript?
 // Scope refers to a piece of data that could be accessed globally or locally
 
-const book = {
-  title: "Harry Potter",
-  author: "JK Rowling",
-  pages: 500,
-  description:
-    "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.",
-  year_published: 1997,
-  number_of_books: 7,
-};
+// global variable
+// let num1 = 35;
+// let num2 = 40;
+
+function sum() {
+  // local variable/scope
+  let num1 = 10;
+  let num2 = 40;
+  return num1 + num2;
+}
+
+// console.log(num1 + num2);
+
+let total = sum();
+
+// const book = {
+//   title: "Harry Potter",
+//   author: "JK Rowling",
+//   pages: 500,
+//   description:
+//     "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.",
+//   year_published: 1997,
+//   number_of_books: 7,
+// };
 
 // ! student exercise: create a function that takes a book object as an argument and prints out "The book <book title> was written by <author> in <year published>. It has <number of books> books in the series. <description>. The book has <pages> pages."
+
+// function printBookDetail(book)
+
+// - create a function
+// - pass a parameter => an object
+// - return => "The book <object title> was written by <author> in <year published>. It has <number of books> books in the series. <description>. The book has <pages> pages."
+
+function printBookDetail(book) {
+  return `The book ${book.title} was written by ${book.author} in ${book.year_published}. It has ${book.number_of_books} books in the series. ${book.description}. The book has ${book.pages} pages.`;
+}
 
 /* 
 ! student exercise:
