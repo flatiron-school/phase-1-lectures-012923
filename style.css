@@ -5,7 +5,18 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
+    color: red;
+    
+}
+
+
+#hello-world{
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .container {
@@ -21,20 +32,21 @@ body {
 }
 
 .title {
+    /* color: white; */
     font-size: 28px;
-    color: #333;
+    /* color: #333; */
 }
 
 /* Question and Answer Styles */
 #question {
     font-size: 24px;
-    color: #333;
+    /* color: #333; */
     margin-bottom: 10px;
 }
 
 #answer {
     font-size: 16px;
-    color: #666;
+    /* color: #666; */
 }
 
 /* Art Container Styles */
@@ -69,12 +81,12 @@ body {
 .art-container h3,
 .art-container h4 {
     text-align: center;
-    color: #666;
+    /* color: #666; */
 }
 
 .art-container p {
     font-size: 16px;
-    color: #666;
+    /* color: #666; */
     line-height: 1.6;
 }
 

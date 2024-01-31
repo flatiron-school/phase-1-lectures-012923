@@ -11,11 +11,47 @@ console.log("Hello World!");
 
 // ! DOM Selectors
 // * Single element selectors: getElementById, querySelector
-
 // * Multiple element selectors: getElementsByClassName, getElementsByTagName, querySelectorAll
+
+let title = document.querySelector(".title");
+console.log(title);
+
+title.textContent = "Google";
+
+// ! Changing Attributes
+// * textContent -> change text
+// * innerText
+// * innerHTML -> changes the html
+// * value -> input, textarea
+// * src -> image source
+
+// ! Changing Styles
+// * backgroundColor
+let html = document.querySelector("html");
+
+html.style.backgroundColor = "Green";
+
+let body = document.querySelector("body");
+body.style.backgroundColor = "Grey";
+
+body.style.color = "White";
+
+// body.style.border = "10px";
+// body.style.borderColor = "Black";
+// body.style.borderStyle = "solid";
+
+// * color
+// * fontSize
 
 // ! Creating Elements
 // * document.createElement()
+
+let myh1 = document.createElement("h1");
+myh1.textContent = "Hello world";
+
+myh1.id = "hello-world";
+
+body.append(myh1);
 // * element.appendChild() -> append a single child to a parent node
 // * element.append() -> append multiple child to a parent node
 
@@ -23,21 +59,27 @@ console.log("Hello World!");
 // * element.className
 // * element.id
 
-// ! Changing Attributes
-// * textContent
-// * innerText
-// * innerHTML
-// * value
-// * src
-
-// ! Changing Styles
-// * backgroundColor
-// * color
-// * fontSize
-
 // ? DOM Excercise
 // * Create an array of color names
+let colors = ["purple", "brown", "indigo", "blue", "orange", "cat"];
+
 // * Create an unordered list and add list items for each color in the array and append to the DOM (use foreach)
+// create an ul => unordered list
+let ul = document.createElement("ul");
+
+// li => append to ul
+
+// append the ul to the body
+
+for (let color of colors) {
+  console.log(color);
+  let li = document.createElement("li");
+  ul.append(li);
+  li.textContent = color;
+  li.style.color = color;
+}
+
+body.append(ul);
 // * The color of the text for each list item should be the color of the array item
 
 // ! Student excercise
