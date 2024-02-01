@@ -60,7 +60,7 @@ button {
 }
 
 button:hover {
-    background-color: #d63447;
+    background-color: rgb(214, 52, 71);
 }
 
 /* Form styles */
