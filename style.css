@@ -60,8 +60,13 @@ button:hover {
     background-color: #0056b3;
 }
 
-.studentList{
+#student-list{
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    padding: 20px;
+    gap: 20px;
 }
 .student-card {
     background-color: #ffffff;
@@ -69,6 +74,7 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
+    border: 1px solid #9c9c9c;
 }
 
 .student-card h2 {
@@ -96,6 +102,13 @@ button:hover {
     font-size: 16px;
     margin-bottom: 5px;
     color: #666666;
+}
+
+#student-subjects{
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    flex-wrap: wrap;
 }
 
 .student-list{
