@@ -55,4 +55,9 @@ const students = [
   },
 ];
 
+// ! Student management system
+// * Display all students from the list
+// * Student info should be displayed in the following format:
+// * div with class "student-card" -> h2 with student name -> p with student age -> p with student grade -> ul with id "subject-list" -> li for each subject
+
 console.log(students);
