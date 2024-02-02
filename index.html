@@ -1,43 +1,44 @@
-<!-- FILEPATH: /Users/mohammadhossain/Desktop/phase-1-lectures/index.html -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>DOM Manipulation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <div class="title-div">
-      <h1 class="title">Welcome to DOM Events Workshop</h1>
-    </div>
-
     <div class="container">
-      <p id="question">What is an Event?</p>
-      <p id="answer">
-        DOM Events are a signal that something has occurred, or is occurring,
-        and can be triggered by user interactions or by the browser.
-      </p>
-      <h1 id="count">0</h1>
-      <button id="count-button">Click Me</button>
-
-      <button id="red">Red</button>
-      <button id="blue">Blue</button>
-      <button id="green">Green</button>
-
-      <ul id="todo-list">
-        <li>Walk the dog <button>❌</button></li>
-        <li>Wash the dishes <button>❌</button></li>
-        <li>Do laundry <button>❌</button></li>
-      </ul>
-
-      <form>
-        <label for="input">Create a to-do</label>
-        <input type="text" id="input" name="input" />
-        <input type="submit" id="submit" />
+      <h1>Student Management System</h1>
+      <form id="studentForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" required />
+        </div>
+        <div class="form-group">
+          <label for="grade">Grade:</label>
+          <input type="text" id="grade" name="grade" required />
+        </div>
+        <button type="submit">Add Student</button>
       </form>
-    </div>
+      <div id="student-list">
+        <!-- Student information will be dynamically added here -->
+        <div class="student-card">
+          <h2 id="studentName">Student Name</h2>
+          <p>20</p>
+          <p><3.8</p>
 
-    <script src="index.js"></script>
+          <ul id="studentSubjects">
+            <!-- List of subjects will be dynamically added here -->
+            <li>math</li>
+            <li>math</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
