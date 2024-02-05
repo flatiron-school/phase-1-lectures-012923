@@ -42,11 +42,16 @@ function renderStudentCard(student) {
 
   let subjects = student.subjects;
 
-  for (let subject of subjects) {
+  subjects.forEach((subject) => {
     let li = document.createElement("li");
     li.textContent = subject;
     ul.append(li);
-  }
+  });
+  //   for (let subject of subjects) {
+  //     let li = document.createElement("li");
+  //     li.textContent = subject;
+  //     ul.append(li);
+  //   }
 }
 
 const handleSubmit = (e) => {
@@ -59,13 +64,59 @@ const handleSubmit = (e) => {
     subjects: [],
   };
 
-  renderStudentCard(newStudent);
+  // take the object above and post it to the server
+  fetch("https://large-sunset-yttrium.glitch.me/students", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(newStudent),
+  })
+    .then((res) => {
+      if (res.status === 201) {
+        return res.json();
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      renderStudentCard(data);
+    });
 };
 
 form.addEventListener("submit", handleSubmit);
 
 // loop over the array
 // for each student create a student card
+
+fetch("https://large-sunset-yttrium.glitch.me/advisors")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+    data.forEach((advisor, index) => {
+      console.log(index);
+      renderAdvisorCard(advisor);
+    });
+  });
+
+let advisorContainerDiv = document.querySelector(".advisor-container");
+
+function renderAdvisorCard(advisor) {
+  //   advisor => name, email, phone
+  let div = document.createElement("div");
+  div.className = "advisor-card";
+
+  let h2 = document.createElement("h2");
+  h2.textContent = advisor.name;
+
+  let emailP = document.createElement("p");
+  emailP.textContent = advisor.email;
+
+  let phoneP = document.createElement("p");
+  phoneP.textContent = advisor.phone;
+
+  div.append(h2, emailP, phoneP);
+  advisorContainerDiv.append(div);
+}
 
 //
 // <!-- <div class="advisor-card">
