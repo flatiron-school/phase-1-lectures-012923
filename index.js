@@ -37,6 +37,10 @@ function renderStudentCard(student) {
 
   let ul = document.createElement("ul");
 
+  // ! TASK 1. Create a delete button and make a delete request, should delete the card from the DOM as well
+
+  // ! TAST 2. Render a button "Active Student". Mark student to true/false, by clicking the buttong and patching isStudent: true/false. If the value of isStudent is true button text should be "Active Student". If the value of isStudent is false the button text should say: "Inactive Student"
+
   div.append(h2, ageP, gradeP, ul);
   studentList.append(div);
 
@@ -61,6 +65,7 @@ const handleSubmit = (e) => {
     name: e.target.name.value,
     age: e.target.age.value,
     grade: e.target.grade.value,
+    isStudent: true,
     subjects: [],
   };
 
