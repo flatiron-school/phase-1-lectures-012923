@@ -26,6 +26,8 @@ function renderStudentCard(student) {
   let div = document.createElement("div");
   div.className = "student-card";
 
+  div.style.backgroundColor = student.isStudent ? "Green" : "Grey";
+
   let h2 = document.createElement("h2");
   h2.textContent = student.name;
 
@@ -39,9 +41,47 @@ function renderStudentCard(student) {
 
   // ! TASK 1. Create a delete button and make a delete request, should delete the card from the DOM as well
 
+  let deleteButton = document.createElement("button");
+  deleteButton.textContent = "🗑️";
+  deleteButton.style.backgroundColor = "transparent";
+
+  deleteButton.addEventListener("click", () => {
+    // deleteStudent(student.id, div);
+    fetch(`https://large-sunset-yttrium.glitch.me/students/${student.id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => div.remove());
+  });
+
   // ! TAST 2. Render a button "Active Student". Mark student to true/false, by clicking the buttong and patching isStudent: true/false. If the value of isStudent is true button text should be "Active Student". If the value of isStudent is false the button text should say: "Inactive Student"
 
-  div.append(h2, ageP, gradeP, ul);
+  let activeStudentButton = document.createElement("button");
+  activeStudentButton.textContent = student.isStudent
+    ? "Mark Inactive"
+    : "Mark active";
+
+  activeStudentButton.addEventListener("click", () => {
+    fetch(`https://large-sunset-yttrium.glitch.me/students/${student.id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        isStudent: !student.isStudent,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        activeStudentButton.textContent = data.isStudent
+          ? "Mark Inactive"
+          : "Mark active";
+
+        div.style.backgroundColor = data.isStudent ? "Green" : "Grey";
+      });
+  });
+
+  div.append(h2, ageP, gradeP, ul, activeStudentButton, deleteButton);
   studentList.append(div);
 
   let subjects = student.subjects;
@@ -56,6 +96,13 @@ function renderStudentCard(student) {
   //     li.textContent = subject;
   //     ul.append(li);
   //   }
+}
+
+function deleteStudent(id, div) {
+  fetch(`https://large-sunset-yttrium.glitch.me/students/${id}`, {
+    method: "DELETE",
+  });
+  div.remove();
 }
 
 const handleSubmit = (e) => {
